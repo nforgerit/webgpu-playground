@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>WebGPU Skeleton</title>
+
+  <link rel="preload" as="fetch" href="app.wasm" crossorigin />
+  <link rel="stylesheet" href="pico.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container-fluid">
+    <div>
+      <h1>WebGPU Skeleton</h1>
+    </div>
+
+    <section class="grid">  
+      <div>
+        <canvas id="main" width="1024" height="768">
+          <h3>Sorry</h3>
+          <p>
+            WebGPU is currently only supported in Firefox Nightly,
+            Chrome and Edge.
+          </p>
+          <p>
+            See <a href="https://caniuse.com/?search=webgpu">https://caniuse.com/?search=webgpu</a>
+            for more information.
+          </p>
+        </canvas>
+      </div>
+      <div>
+        <form>
+          <label>The factorial of <input type="text" value="12" /></label> is
+          <output>...</output>.
+          <button type="submit">Calculate</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="main.js" type="module"></script>
+  </main>
+</body>
+
+</html>
