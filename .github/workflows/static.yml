@@ -26,13 +26,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: mymindstorm/setup-emsdk@v14
-  
       - name: Verify
         run: emcc -v
-      
       # todo: make following call customizable
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: build
-        run: emcc -O3 ./src/renderer/main.c \
+        run: mkdir dist && emcc -O3 ./src/renderer/main.c \
           -o ./dist/assets/app.wasm \
           -s WASM_BIGINT 
           -s EXPORTED_FUNCTIONS=["_factorial"] 
