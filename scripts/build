@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 export EMSDK_QUIET=1
-source /Users/nico/code/libreoffice/emsdk/emsdk_env.sh
 
 SRC=./src
 DIST=./dist
