@@ -23,31 +23,23 @@ concurrency:
 
 jobs:
   build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}  
     runs-on: ubuntu-latest
     steps:
       - uses: mymindstorm/setup-emsdk@v14
-      - name: Verify
-        run: emcc -v
-      # todo: (1) add npm and vite for build env
-      # todo: (2) run vite to build web app
-      # todo: (3) make emcc call customizable
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: build
-        run: |
-          mkdir dist && emcc -O3 ./src/renderer/main.c \
-          -o ./dist/app.wasm \
-          -s WASM_BIGINT \
-          -s EXPORTED_FUNCTIONS=["_factorial"] \
-          --no-entry
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4          
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -57,4 +49,23 @@ jobs:
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4        
+      
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #     - name: Setup Pages
+  #       uses: actions/configure-pages@v5
+  #     - name: Upload artifact
+  #       uses: actions/upload-pages-artifact@v3
+  #       with:
+  #         # Upload entire repository
+  #         path: './dist'
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
