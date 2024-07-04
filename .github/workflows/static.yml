@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Build and deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -22,7 +22,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mymindstorm/setup-emsdk@v14
+  
+      - name: Verify
+        run: emcc -v
+      
+      # todo: make following call customizable
+      - name: build
+        run: emcc -O3 ./src/renderer/main.c \
+          -o ./dist/assets/app.wasm \
+          -s WASM_BIGINT 
+          -s EXPORTED_FUNCTIONS=["_factorial"] 
+          --no-entry
   deploy:
     environment:
       name: github-pages
