@@ -18,3 +18,7 @@
 - https://web.dev/articles/workers-basics
 - https://html.spec.whatwg.org/multipage/workers.html
 - https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers
+
+### WGSL
+- https://google.github.io/tour-of-wgsl/
+- https://www.w3.org/TR/WGSL/
