@@ -1,7 +1,7 @@
-# WebGPU Wasm Skeleton
+# WebGPU Wasm Playground
 
 ## Dependencies
-- WebGPU supporting browser (Firefox Nightly, Chrome)
+- [WebGPU supporting browser (Firefox Nightly, Chrome, Edge, Opera, Safari TP)](https://caniuse.com/?search=webgpu)
 - [Pico CSS](https://github.com/picocss/pico)
 - [wgpu-matrix](https://github.com/greggman/wgpu-matrix)
 
