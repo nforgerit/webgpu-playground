@@ -1,5 +1,10 @@
 # WebGPU Wasm Skeleton
 
+## Dependencies
+- WebGPU supporting browser (Firefox Nightly, Chrome)
+- [Pico CSS](https://github.com/picocss/pico)
+- [wgpu-matrix](https://github.com/greggman/wgpu-matrix)
+
 ## Sources
 
 ### WebGPU

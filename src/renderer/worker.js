@@ -1,7 +1,8 @@
+import { mat4, vec3 } from 'wgpu-matrix';
+import basicVertWGSL from './shaders/basic.vert.wgsl.js';
+import vertexPositionColorWGSL from './shaders/vertexPositionColor.frag.wgsl.js';
+
 (async () => {
-// todo: add proper build system
-const wgpuMatrix = (await import('./wgpu-matrix.js')).default;
-const { mat4, vec3 } = wgpuMatrix;
 
 const {
   cubeVertexArray,
@@ -10,9 +11,6 @@ const {
   cubePositionOffset,
   cubeVertexCount,
 } = await import('./meshes/cube.js');
-
-const basicVertWGSL = (await import('./shaders/basic.vert.wgsl.js')).default;
-const vertexPositionColorWGSL = (await import('./shaders/vertexPositionColor.frag.wgsl.js')).default;
 
 let direction = 0;
 
