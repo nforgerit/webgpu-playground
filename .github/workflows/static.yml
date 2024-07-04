@@ -32,10 +32,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: build
-        run: mkdir dist && emcc -O3 ./src/renderer/main.c \
+        run: |
+          mkdir dist && emcc -O3 ./src/renderer/main.c \
           -o ./dist/assets/app.wasm \
-          -s WASM_BIGINT 
-          -s EXPORTED_FUNCTIONS=["_factorial"] 
+          -s WASM_BIGINT \
+          -s EXPORTED_FUNCTIONS=["_factorial"] \
           --no-entry
   deploy:
     environment:
