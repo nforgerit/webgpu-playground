@@ -8,25 +8,9 @@ DIST=./dist
 MEMORY=32mb
 OPTS='-s WASM_BIGINT -s EXPORTED_FUNCTIONS=["_factorial"] --no-entry'
 
-# clean
-rm -fr $DIST
-mkdir $DIST
-
-# build
-cp $SRC/pico.min.css $DIST/pico.min.css
-cp $SRC/style.css $DIST/style.css
-cp $SRC/main.js $DIST/main.js
-cp $SRC/proc/worker.js $DIST/proc.js
-cp $SRC/renderer/worker.js $DIST/renderer.js
-cp $SRC/renderer/wgpu-matrix.js $DIST/wgpu-matrix.js
-cp $SRC/renderer/shaders/basic.vert.wgsl.js $DIST/basic.vert.wgsl.js
-cp $SRC/renderer/shaders/vertexPositionColor.frag.wgsl.js $DIST/vertexPositionColor.frag.wgsl.js
-cp $SRC/renderer/meshes/cube.js $DIST/cube.js
-cp $SRC/index.html $DIST/index.html
-
 echo "-> build wasm"
 emcc -O3 $SRC/renderer/main.c \
-	-o $DIST/app.wasm \
+	-o $DIST/assets/app.wasm \
 	$OPTS
 
 # fin

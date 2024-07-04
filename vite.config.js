@@ -1,4 +1,13 @@
 // vite.config.js
-export default {
-  // config options
-}
+
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  lib: {
+    formats: ['es']
+  },
+  worker: {
+    format: 'es'
+  }
+})
+

@@ -1,12 +1,10 @@
-"use strict";
-
 const initialState = {}
 
 /*
  * Process state
  */
 
-const proc = new Worker(new URL('./proc.js', import.meta.url));
+const proc = new Worker(new URL('./proc/worker.js', import.meta.url));
 
 
 /*
@@ -20,7 +18,7 @@ const devicePixelRatio = window.devicePixelRatio;
 offscreenCanvas.width = canvas.clientWidth * devicePixelRatio;
 offscreenCanvas.height = canvas.clientHeight * devicePixelRatio;
 
-const renderer = new Worker(new URL('./renderer.js', import.meta.url));
+const renderer = new Worker(new URL('./renderer/worker.js', import.meta.url));
 
 renderer.addEventListener('message', (ev) => {
   switch (ev.data.type) {
