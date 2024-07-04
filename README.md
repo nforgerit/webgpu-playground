@@ -1,4 +1,4 @@
-# WebGPU Wasm Playground
+# WebGPU Playground
 
 ## Dependencies
 - [WebGPU supporting browser (Firefox Nightly, Chrome, Edge, Opera, Safari TP)](https://caniuse.com/?search=webgpu)
