@@ -1,5 +1,13 @@
 @import url('@picocss/pico');
 
-canvas#main {
+canvas#spinning-cube {
   width: 100%;
+}
+
+div.example {
+
+}
+
+section.grid {
+
 }

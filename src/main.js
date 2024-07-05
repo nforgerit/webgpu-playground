@@ -11,7 +11,7 @@ const proc = new Worker(new URL('./proc/worker.js', import.meta.url));
  * Renderer
  */
 
-const canvas = document.querySelector('canvas#main');
+const canvas = document.querySelector('canvas#spinning-cube');
 
 const offscreenCanvas = canvas.transferControlToOffscreen();
 const devicePixelRatio = window.devicePixelRatio;

@@ -10,32 +10,46 @@
 
 <body>
   <main class="container-fluid">
-    <div>
+    <div class="container">
       <h1>WebGPU Playground</h1>
     </div>
+    
+    <div class="container">
+      <h2>Across the systems</h2>
 
-    <section class="grid">  
-      <div>
-        <canvas id="main" width="1024" height="768">
-          <h3>Sorry</h3>
+      <section class="grid">
+        <div>
+          <canvas id="spinning-cube" width="1024" height="768">
+            <h3>Sorry</h3>
+            <p>
+              WebGPU is currently only supported in Firefox Nightly,
+              Chrome and Edge.
+            </p>
+           <p>
+              See <a href="https://caniuse.com/?search=webgpu">https://caniuse.com/?search=webgpu</a>
+              for more information.
+            </p>
+          </canvas>
+        </div>
+        <div>
           <p>
-            WebGPU is currently only supported in Firefox Nightly,
-            Chrome and Edge.
+            Factorial. It doesn't check for overflows but shows 
+            interaction across Wasm, WebWorker and WebGPU.
           </p>
-          <p>
-            See <a href="https://caniuse.com/?search=webgpu">https://caniuse.com/?search=webgpu</a>
-            for more information.
-          </p>
-        </canvas>
-      </div>
-      <div>
-        <form>
-          <label>The factorial of <input type="text" value="12" /></label> is
-          <output>...</output>.
-          <button type="submit">Calculate</button>
-        </form>
-      </div>
-    </section>
+
+          <form>
+            <label>The factorial of <input type="text" value="12" /></label> is
+            <output>...</output>.
+            <button type="submit">Calculate</button>
+          </form>
+        </div>
+      </section>
+
+      <hr />
+    </div>
+
+
+
 
   </main>
 </body>

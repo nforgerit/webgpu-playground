@@ -1,6 +1,6 @@
 import { mat4, vec3 } from 'wgpu-matrix';
-import basicVertWGSL from './shaders/basic.vert.wgsl.js';
-import vertexPositionColorWGSL from './shaders/vertexPositionColor.frag.wgsl.js';
+import basicVertWGSL from './shaders/basic.vert.wgsl?raw';
+import vertexPositionColorWGSL from './shaders/vertexPositionColor.frag.wgsl?raw';
 
 (async () => {
 
