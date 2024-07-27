@@ -33,7 +33,7 @@ async function init() {
 
   if (!instance) {
     const importObject = { imports: { imported_func: (arg) => console.log(arg) } };
-    const module = await WebAssembly.compileStreaming(fetch('app.wasm'));
+    const module = await WebAssembly.compileStreaming(fetch('./shader-proc-worker.wasm'));
     instance = await WebAssembly.instantiate(module, importObject);
   }
 }

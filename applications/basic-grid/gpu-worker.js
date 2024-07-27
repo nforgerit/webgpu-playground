@@ -1,6 +1,6 @@
 import { mat4, vec3 } from 'wgpu-matrix';
-import basicVertWGSL from './shaders/basic.vert.wgsl?raw';
-import vertexPositionColorWGSL from './shaders/vertexPositionColor.frag.wgsl?raw';
+import basicVertWGSL from './basic.vert.wgsl?raw';
+import vertexPositionColorWGSL from './vertexPositionColor.frag.wgsl?raw';
 
 (async () => {
 
@@ -10,7 +10,7 @@ const {
   cubeUVOffset,
   cubePositionOffset,
   cubeVertexCount,
-} = await import('./meshes/cube.js');
+} = await import('./cube.js');
 
 let direction = 0;
 
@@ -162,25 +162,28 @@ async function init(canvas) {
 
   function getTransformationMatrix() {
     const viewMatrix = mat4.identity();
-    mat4.translate(viewMatrix, vec3.fromValues(0, 0, -4), viewMatrix);
+    mat4.translate(viewMatrix, vec3.fromValues(0, 0, -6), viewMatrix);
 
     const now = Date.now() / 1000;
 
-    if (direction) {
+    mat4.translate(viewMatrix, vec3.fromValues(0, Math.sin(now)*2, 0), viewMatrix);
+
+    // if (direction) {
       mat4.rotate(
         viewMatrix,
-        vec3.fromValues(Math.sin(now), Math.cos(now), 0),
-        1,
+        // vec3.fromValues(Math.sin(now), 0, Math.cos(now)),
+        vec3.fromValues(0, 1, 0),
+        now%(2*Math.PI),
         viewMatrix
       );
-    } else {
-      mat4.rotate(
-        viewMatrix,
-        vec3.fromValues(Math.cos(now), Math.sin(now), 0),
-        1,
-        viewMatrix
-      );
-    }
+    // } else {
+    //   mat4.rotate(
+    //     viewMatrix,
+    //     vec3.fromValues(Math.cos(now), Math.sin(now), 0),
+    //     1,
+    //     viewMatrix
+    //   );
+    // }
 
     mat4.multiply(projectionMatrix, viewMatrix, modelViewProjectionMatrix);
 

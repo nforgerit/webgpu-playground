@@ -2,97 +2,41 @@
 <html lang="en">
 
 <head>
-  {{> head}}
-
+  <meta charset="utf-8" />
+  <title>WebGPU Playground</title>
+  <link rel="stylesheet" href="../src/style.css">
+  <script src="./main.js" type="module"></script>
 </head>
 
 <body>
   <main class="container-fluid">
-    {{> nav}}
-    
-    <div class="container">
-    <p>
-      WebGPU is the future standard for graphics (GPU) and general purpose 
-      computing (GPGPU) in the web browser.
-    </p>
+  {{> nav}}
 
-    <p>
-      It is the successor of WebGL and based on 
-      <a href="https://www.w3.org/TR/webgpu/">open W3C standards</a> agreed upon 
-      by all common web browser vendors. Still being in its early days, it is 
-      currently (mid-2024) available in 
-      <a href="https://caniuse.com/?search=webgpu">Chrome, Firefox Nightly, Edge,
-      Safari Technology Preview and Opera</a>. WebGPU provides a uniform 
-      abstraction over different GPU/GPGPU interfaces such as DirectX, Vulkan 
-      and Metal while promising near-native performance with Javascript plumbing.
-      Shader support is provided through WGSL.
-    </p>
-    
-    <p>
-      Since nowadays many app developers decide to ship whole browsers anyway 
-      why not using WebGPU, WebWorkers and WebAssembly for cross-platform 
-      applications. The WebWorker API adds concurrency based on the 
-      <a href="https://en.wikipedia.org/wiki/Message_passing">message 
-      passing</a> pattern.
-    </p>
-  </div>
-    
     <div class="container">
-      <h1>Applications</h1>
+      <h2>Learning Sources</h2>
 
       <section class="grid">
         <div>
-          <h3>Science &amp; Engineering</h3>
+          <h3>Domains</h3>
           <ul>
-            <li><a href="">Fast Fourier Transform</a></li>
-            <li><a href="">Statistical Physics</a></li>
-            <li><a href="">Spice (Electrical Circuitry)</a></li>
-            <li><a href="">Bioinformatics</a></li>
-            <li><a href="">Matlab Clone</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>GPGPU</h3>
-          <ul>
-            <li><a href="">Machine Learning</a></li>
-            <li><a href="">Stream Processing</a></li>
-            <li><a href="">Monte Carlo</a></li>
-            <li><a href="">Cryptography</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Media &amp; Games</h3>
-          <ul>
-            <li><a href="">Audio/Video Processing</a></li>
-            <li><a href="">Tetris</a></li>
-            <li><a href="">Flight Simulator</a></li>
-            <li><a href="">Jump and Run</a></li>
-            <li><a href="">Shooter</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Education</h3>
-          <ul>
-            <li><a href="">Virtual Tourism</a></li>
-            <li><a href="">E-Schooling</a></li>
-            <li><a href="">Historical Settings</a></li>
-            <li><a href="">Climate Change</a></li>
-            <li><a href="">ISA Simulator</a></li>
+            <li><a href="https://www.willusher.io/graphics/2024/04/22/webgpu-marching-cubes/#introduction-to-marching-cubes">https://www.willusher.io/graphics/2024/04/22/webgpu-marching-cubes/#introduction-to-marching-cubes</a></li>
+            <li><a href="https://github.com/m-schuetz/webgpu_wireframe_thicklines">https://github.com/m-schuetz/webgpu_wireframe_thicklines</a></li>
           </ul>
         </div>
       </section>
-
-      <h1>Learning Sources</h1>
 
       <section class="grid">
         <div>
           <h3>WebAssembly</h3>
           <ul>
+            <li><a href="https://webassembly.org/features/">https://webassembly.org/features/</a></li>
             <li><a href="https://web.dev/articles/webassembly-performance-patterns-for-web-apps">https://web.dev/articles/webassembly-performance-patterns-for-web-apps</a></li>
             <li><a href="https://emscripten.org/docs/api_reference/index.html">https://emscripten.org/docs/api_reference/index.html</a></li>
             <li><a href="https://emscripten.org/docs/optimizing/Optimizing-Code.html">https://emscripten.org/docs/optimizing/Optimizing-Code.html</a></li>
           </ul>
         </div>
+      </section>
+      <section class="grid">
         <div>
           <h3>WebGPU</h3>
           <ul>
@@ -103,6 +47,8 @@
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice">https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice</a></li>
           </ul>
         </div>
+      </section>
+      <section class="grid">
         <div>
           <h3>WebWorker</h3>
           <ul>
@@ -111,6 +57,8 @@
             <li><a href="https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers">https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers</a></li>
           </ul>
         </div>
+      </section>
+      <section class="grid">
         <div>
           <h3>WGSL</h3>
           <ul>
@@ -123,6 +71,9 @@
           </ul>
         </div>
       </section>
+
+
+      <hr />
     </div>
   </main>
 </body>

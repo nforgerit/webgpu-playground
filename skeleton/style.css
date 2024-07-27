@@ -1,0 +1,6 @@
+@import url('@picocss/pico');
+
+canvas#spinning-cube {
+  width: 100%;
+}
+

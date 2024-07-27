@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>WebGPU Playground</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js" type="module"></script>
+</head>
+
+<body>
+  <main class="container-fluid">
+  {{> nav}}
+    
+    <div class="container">
+      <h2>Shader</h2>
+
+      <section class="grid">
+        <div>
+          <!-- <canvas id="spinning-cube" width="1024" height="768"> -->
+          <canvas id="spinning-cube" style="min-height:80vh;">
+            <h3>Sorry</h3>
+            <p>
+              WebGPU is currently only supported in Firefox Nightly,
+              Chrome and Edge.
+            </p>
+           <p>
+              See <a href="https://caniuse.com/?search=webgpu">https://caniuse.com/?search=webgpu</a>
+              for more information.
+            </p>
+          </canvas>
+        </div>
+        <div>
+          <form>
+            <button type="submit">Apply</button>
+
+            <details>
+              <summary role="button" class="outline secondary">Vertex Shader</summary>
+              <textarea rows="20" id="vertShader" type="text" value=""></textarea>
+            </details>
+
+            <hr />
+
+            <details>
+              <summary role="button" class="outline secondary">Fragment Shader</summary>
+              <textarea rows="20" id="fragShader" type="text" value=""></textarea>
+            </details>
+
+            <hr />
+
+            <details>
+              <summary role="button" class="outline secondary">Compute Shader</summary>
+              <textarea rows="20" id="computeShader" type="text" value=""></textarea>
+            </details>
+          
+            <hr />
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <hr />
+
+  <footer class="container-fluid">Some footer</footer>
+</body>
+
+</html>

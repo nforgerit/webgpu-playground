@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+export EMSDK_QUIET=0
+
+SRC=./src
+DIST=./dist
+ROOT=./
+MEMORY=32mb
+OPTS='-s WASM_BIGINT -s EXPORTED_FUNCTIONS=["_factorial"] --no-entry'
+
+# Skeleton
+echo "-> build skeleton wasm"
+emcc -O3 ./skeleton/main.c \
+	-o $DIST/assets/skeleton-proc-worker.wasm \
+	$OPTS
+
+# Skeleton
+echo "-> build shader wasm"
+emcc -O3 ./shader/main.c \
+	-o $DIST/assets/shader-proc-worker.wasm \
+	$OPTS
+
+
+# Basic Grid
+echo "-> build Basic Grid wasm"
+emcc -O3 ./applications/basic-grid/main.c \
+	-o $DIST/assets/skeleton-proc-worker.wasm \
+	$OPTS
+
+# fin
+echo $'\nfin.'
